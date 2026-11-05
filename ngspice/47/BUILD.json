@@ -1,0 +1,24 @@
+{
+ "ngspice": {
+  "version": "47",
+  "source": "https://sourceforge.net/projects/ngspice/files/ng-spice-rework/47/ngspice-47.tar.gz/download",
+  "source_sha256": "894e649651f1838a14095e5a5439e7d3aa63e87ede14d283173fda4fcdef675f",
+  "patches": [
+   "0001-xspice-options-enum.patch"
+  ]
+ },
+ "emscripten": "emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 6.0.13 (e13ee988ce3d87a738dd8f3661d02223308c412a)",
+ "build_script": "build_ngspice_wasm.sh (copy of dschem's scripts/build_ngspice_wasm.sh)",
+ "dschem_commit": "10eff0e8dc440e72140197bd4ebe5d1f2f20b445",
+ "features": "analog only: no XSPICE, CIDER or OSDI",
+ "files": {
+  "ngspice.mjs": {
+   "size": 77205,
+   "sha256": "4ea705d6583bce1eab63c7aa5c50610d66fedd113db3e3e53eed0fb79f577706"
+  },
+  "ngspice.wasm": {
+   "size": 4879070,
+   "sha256": "eb024064edd0dc2c253c5013ded22a286ffaa52ed7442ec5767af329c1e5ec6e"
+  }
+ }
+}
