@@ -89,6 +89,7 @@ em++ -O2 -fexceptions "$BUILD/src/.libs/libngspice.a" -o "$OUT/ngspice.mjs" \
   -sMODULARIZE=1 -sEXPORT_ES6=1 -sEXPORT_NAME=createNgspice \
   -sALLOW_MEMORY_GROWTH=1 -sALLOW_TABLE_GROWTH=1 -sENVIRONMENT=web,worker,node \
   -sEXIT_RUNTIME=0 -sEXPORTED_FUNCTIONS="$EXPORTS" \
+  -sINCOMING_MODULE_JS_API=wasmBinary,locateFile,print,printErr \
   -sEXPORTED_RUNTIME_METHODS=FS,addFunction,UTF8ToString,stringToNewUTF8,HEAPF64,HEAPU32,HEAP32 \
   2> "$OUT/link.log" || { cat "$OUT/link.log" >&2; exit 1; }
 ls -l "$OUT"/ngspice.mjs "$OUT"/ngspice.wasm

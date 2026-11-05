@@ -9,16 +9,16 @@
  },
  "emscripten": "emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 6.0.13 (e13ee988ce3d87a738dd8f3661d02223308c412a)",
  "build_script": "build_ngspice_wasm.sh (copy of dschem's scripts/build_ngspice_wasm.sh)",
- "dschem_commit": "10eff0e8dc440e72140197bd4ebe5d1f2f20b445",
+ "dschem_commit": "be96a23bc43bed61c5392bf53fa4552cb9879b57 (with uncommitted changes)",
  "features": "analog only: no XSPICE, CIDER or OSDI",
  "files": {
   "ngspice.mjs": {
-   "size": 77205,
-   "sha256": "4ea705d6583bce1eab63c7aa5c50610d66fedd113db3e3e53eed0fb79f577706"
+   "size": 76016,
+   "sha256": "64cedaf7fbb1525843b32ea14b671f9a7ff1ab2c09a264c1d43b910f186040c7"
   },
   "ngspice.wasm": {
    "size": 4879070,
-   "sha256": "eb024064edd0dc2c253c5013ded22a286ffaa52ed7442ec5767af329c1e5ec6e"
+   "sha256": "963784aaae953c82038c80393600012e3817f10e74a71f4458600dd5c7bedfad"
   }
  }
 }
