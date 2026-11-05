@@ -1,0 +1,8 @@
+The model files under sky130A/ are part of the SkyWater SKY130 PDK
+(Copyright 2020 The SkyWater PDK Authors), as built by open_pdks 1.0.608
+(commit 1689ac3f2dc763876eaf967227c7dfe831b031ae) and distributed by ciel
+(https://github.com/fossi-foundation/ciel-releases). They are licensed under
+the Apache License, Version 2.0 (see LICENSE) and are copied here unmodified.
+
+scripts/build.py is part of DSchem and is also licensed under the Apache
+License, Version 2.0.
