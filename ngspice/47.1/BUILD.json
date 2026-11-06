@@ -1,0 +1,25 @@
+{
+ "ngspice": {
+  "version": "47",
+  "source": "https://sourceforge.net/projects/ngspice/files/ng-spice-rework/47/ngspice-47.tar.gz/download",
+  "source_sha256": "894e649651f1838a14095e5a5439e7d3aa63e87ede14d283173fda4fcdef675f",
+  "patches": [
+   "0001-xspice-options-enum.patch",
+   "0002-strtod-errno.patch"
+  ]
+ },
+ "emscripten": "6.0.13",
+ "build_script": "build_ngspice_wasm.sh (copy of dschem's scripts/build_ngspice_wasm.sh)",
+ "dschem_commit": "d90ea649ee58ed4948622b31e379bd9c5b85938d (with uncommitted changes)",
+ "features": "analog only: no XSPICE, CIDER or OSDI",
+ "files": {
+  "ngspice.mjs": {
+   "size": 76016,
+   "sha256": "64cedaf7fbb1525843b32ea14b671f9a7ff1ab2c09a264c1d43b910f186040c7"
+  },
+  "ngspice.wasm": {
+   "size": 4879082,
+   "sha256": "41df95e5194471b31795e4dee24a219705216fd666277df1d6d77496f4f89cff"
+  }
+ }
+}

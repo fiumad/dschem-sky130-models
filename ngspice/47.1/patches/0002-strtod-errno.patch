@@ -1,0 +1,21 @@
+create_model() calls strtod() on a model-card word that is not a known
+parameter, to tell a stray number from an unknown parameter name. With
+musl (Emscripten), strtod() sets errno to EINVAL when it converts nothing,
+so an unknown name (as in the sky130 resistor models) became a fatal
+"strtod: Invalid argument" instead of the warning "unrecognized parameter
+... ignored". glibc leaves errno alone in that case. Only an out-of-range
+number is an error.
+
+--- a/src/spicelib/parser/inpgmod.c	2026-11-06 19:28:02.563294913 +0000
++++ b/src/spicelib/parser/inpgmod.c	2026-11-06 19:28:02.565331969 +0000
+@@ -180,7 +180,9 @@
+                 errno = 0;    /* To distinguish success/failure after call */
+                 dval = strtod(parm, &endptr);
+                 /* Check for various possible errors */
+-                if ((errno == ERANGE && dval == HUGE_VAL) || errno != 0) {
++                /* only a value out of range is an error: when nothing is
++                   converted, C libraries may set errno (musl sets EINVAL) */
++                if (endptr != parm && errno == ERANGE && dval == HUGE_VAL) {
+                     perror("strtod");
+                     controlled_exit(EXIT_FAILURE);
+                 }
