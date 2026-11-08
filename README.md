@@ -25,10 +25,13 @@ checked against the files ngspice 47 actually opens.
 
 ## Temporary: ngspice for the browser
 
-`ngspice/47/` holds DSchem's WebAssembly build of ngspice 47 (`ngspice.mjs` +
-`ngspice.wasm`, analog simulation only). It is here only because this
-repository already has a public Pages site; it will move when DSchem's web app
-gets its own hosting, and does not belong to the model data.
+`ngspice/<build>/` holds DSchem's WebAssembly builds of ngspice 47
+(`ngspice.mjs` + `ngspice.wasm`, analog simulation only): `47`, `47.1` (a
+strtod fix) and `47.2` (with periodic steady state, `--enable-pss`). Each
+rebuild gets a new folder, so DSchem apps built from older commits keep
+finding the build they pin. They are here only because this repository
+already has a public Pages site; they will move when DSchem's web app gets
+its own hosting, and do not belong to the model data.
 
 - `BUILD.json`: ngspice source tarball and SHA-256, patches, Emscripten
   version, the DSchem commit it was built from, and the SHA-256 of both files
