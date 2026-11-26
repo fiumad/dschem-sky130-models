@@ -1,0 +1,24 @@
+ngspice 47 does not compile with --disable-xspice: cktsopt.c uses
+OPT_ENH_RSHUNT outside #ifdef XSPICE, but optdefs.h defines it inside.
+Define the enum unconditionally.
+
+--- a/src/include/ngspice/optdefs.h	2026-11-05 20:18:59.061200428 +0000
++++ b/src/include/ngspice/optdefs.h	2026-11-05 20:18:59.062375736 +0000
+@@ -138,8 +138,8 @@
+     OPT_NEWTRUNC,
+ };
+ 
+-#ifdef XSPICE
+ /* gtri - begin - wbk - add new options */
++/* dschem: defined without XSPICE too; cktsopt.c uses OPT_ENH_RSHUNT either way */
+ enum {
+     OPT_ENH_NOOPALTER = 100,
+     OPT_ENH_RAMPTIME,
+@@ -153,7 +153,6 @@
+ };
+ 
+ /* gtri - end   - wbk - add new options */
+-#endif
+ 
+ #define OPT_TOTALDEV 200 /* Total devices in the netlist */
+ 

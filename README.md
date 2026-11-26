@@ -27,7 +27,9 @@ checked against the files ngspice 47 actually opens.
 
 `ngspice/<build>/` holds DSchem's WebAssembly builds of ngspice 47
 (`ngspice.mjs` + `ngspice.wasm`, analog simulation only): `47`, `47.1` (a
-strtod fix) and `47.2` (with periodic steady state, `--enable-pss`). Each
+strtod fix), `47.2` (with periodic steady state, `--enable-pss`) and `47.3`
+(glibc's `rand()`, so a Monte Carlo seed draws the same samples as ngspice on
+Linux). Each
 rebuild gets a new folder, so DSchem apps built from older commits keep
 finding the build they pin. They are here only because this repository
 already has a public Pages site; they will move when DSchem's web app gets
